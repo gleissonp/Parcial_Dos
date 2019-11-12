@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+
+        HOME AFTER LOGIN
+        
+        <h:form>
+            <h:dataTable styleClass="table table-striped" value="#{usersController.listado}" var="item" >
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Username"/>
+                    </f:facet>
+                    <h:outputText value="#{item.username}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Userpassword"/>
+                    </f:facet>
+                    <h:outputText value="#{item.userpassword}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Usercreated"/>
+                    </f:facet>
+                    <h:outputText value="#{item.usercreated}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Userupdate"/>
+                    </f:facet>
+                    <h:outputText value="#{item.userupdated}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Acciones"/>
+                    </f:facet>
+                    <h:commandButton  value="Edit" action="#{usersController.viewEdit()}" />
+                    <h:commandButton action="#{usersController.doDelete()}" value="Deleted" />
+
+                </h:column>
+
+            </h:dataTable>
+            <h:commandButton action="#{usersController.viewCreate()}" value="Create now" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+

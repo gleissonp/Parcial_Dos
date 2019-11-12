@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form styleClass="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Form Name</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">User</label>  
+                    <div class="col-md-4">
+                        <h:inputText value="#{usersController.actual.username}"/>
+
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Password">Password</label>
+                    <div class="col-md-4">
+                        <h:inputSecret value="#{usersController.actual.userpassword}"/>
+
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="loginbutton"></label>
+                    <div class="col-md-4">
+                        <h:commandButton value="Login" action="#{usersController.login}"/>
+                        <h:commandButton value="Create" action="#{usersController.viewCreate()}"/>
+                        
+                    </div>
+                </div>
+
+            </fieldset>
+        </h:form>
+    </h:body>
+</html>
+
